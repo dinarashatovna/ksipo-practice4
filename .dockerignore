@@ -1,0 +1,12 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/out
+**/flower-shop.db
+**/*.db
+**/*.user
+**/Thumbs.db
+**/.DS_Store
+**/config/*.local.*
+**/.env.local

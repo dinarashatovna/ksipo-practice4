@@ -1,0 +1,28 @@
+# Build
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Local DB / secrets
+*.db
+*.db-shm
+*.db-wal
+
+# Docker / env (при желании добавьте .env в игнор после сдачи, если есть секреты)
+# .env
+
+# OS
+Thumbs.db
+.DS_Store

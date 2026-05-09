@@ -1,0 +1,29 @@
+services:
+  flower-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        Configuration: Release
+    image: ${DOCKER_IMAGE_NAME:-practice4:latest}
+    ports:
+      # Вариант 7: внешний порт 80xx → 8007
+      - "${HOST_PORT:-8007}:8080"
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+    volumes:
+      # Внешняя конфигурация (можно менять без пересборки образа)
+      - ./config/appsettings.Production.json:/app/appsettings.Production.json:ro
+      # Персистентные данные SQLite
+      - flower-data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/health >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  flower-data:
