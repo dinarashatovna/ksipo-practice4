@@ -44,9 +44,9 @@ docker compose up -d
 
 ## Публикация образа в Docker Hub
 
-1. Зарегистрируйся на https://hub.docker.com  
-2. Войди в CLI: `docker login`  
-3. Собери образ с тегом под свой логин:
+1. Зарегистрируйтесь на https://hub.docker.com  
+2. Войдите в CLI: `docker login`  
+3. Соберите образ с тегом под свой логин:
 
 ```bash
 docker build -t ВАШ_ЛОГИН/practice4:latest --build-arg Configuration=Release .
@@ -63,6 +63,6 @@ git add .
 git commit -m "Practice4: Docker and Compose"
 ```
 
-Создай **публичный** репозиторий на GitHub/GitLab, добавь `remote` и `git push`.
+Создайте **публичный** репозиторий на GitHub/GitLab, добавь `remote` и `git push`.
 
-Убедись, что в репозиторий не попали секреты и локальные `.db` (учтено в `.gitignore`).
+Убедитесь, что в репозиторий не попали секреты и локальные `.db` (учтено в `.gitignore`).
